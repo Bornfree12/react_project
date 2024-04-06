@@ -23,13 +23,19 @@ const Header = () => {
               
                 <ul className='mobile-navigation'>
                   <li>
-                    <Link to={'/'}>Home</Link>
+                    <Link to={'/home'}>Home</Link>
                   </li>
                   <li>
                     <Link to={'/menu'}>Menu</Link>
                   </li>
                   <li>
+                    <Link to={'/booking'}>Booking</Link>
+                  </li>
+                  <li>
                     <Link to={'/about'}>About</Link>
+                  </li>
+                  <li>
+                    <Link to={'/location'}>Location</Link>
                   </li>
                   <li>
                     <Link to={'/contact'}>Contact</Link>
@@ -55,13 +61,19 @@ const Header = () => {
               >
                 <ul className='navigation-menu'>
                   <li>
-                    <Link to={'/'}>Home</Link>
+                    <Link to={'/home'}>Home</Link>
                   </li>
                   <li>
                     <Link to={'/menu'}>Menu</Link>
                   </li>
                   <li>
+                    <Link to={'/booking'}>Booking</Link>
+                  </li>
+                  <li>
                     <Link to={'/about'}>About</Link>
+                  </li>
+                  <li>
+                    <Link to={'/location'}>Location</Link>
                   </li>
                   <li>
                     <Link to={'/contact'}>Contact</Link>
