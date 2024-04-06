@@ -7,6 +7,7 @@ import Menu from './pages/Menu';
 import Booking from './pages/Booking';
 import Location from './pages/Location';
 import Login from './pages/Login';
+import Registration from './pages/Registration';
 import Pagenotfound from './pages/Pagenotfound';
 
 
@@ -15,7 +16,8 @@ function App() {
     <div>
       <BrowserRouter>
       <Routes>
-      <Route path="/" element={<Login/>} />
+        <Route path="/" element={<Login/>} />
+        <Route path="/registration" element={<Registration/>} />
         <Route path="/home" element={<Home/>} />
         <Route path="/booking" element={<Booking/>}/>
         <Route path="/about" element={<About/>} />

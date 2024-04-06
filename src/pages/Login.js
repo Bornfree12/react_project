@@ -1,62 +1,73 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { TextField, Button } from '@mui/material';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LockIcon from '@mui/icons-material/Lock';
 
 const Login = () => {
-  const history = useHistory();
+  const Navigate = useNavigate();
 
   const containerStyle = {
     width: '400px',
-    display: 'flex',
-    flexDirection: 'column',
     margin: 'auto',
-    alignItems: 'center',
-    backgroundColor: 'rgb(22, 21, 21)',
+    padding: '40px',
     borderRadius: '15px',
-    padding: '25px 10px',
-    boxShadow: '0 0 15px rgb(80, 79, 79)',
+    boxShadow: '0 0 15px rgba(0, 0, 0, 0.1)',
+    backgroundColor: '#ffffff',
   };
 
   const inputStyle = {
-    height: '50px',
-    borderRadius: '10px',
-    border: 'none',
-    outline: 'none',
-    margin: '10px',
-    textAlign: 'center',
-    fontSize: '20px',
-    color: 'white',
-    backgroundColor: 'rgb(48, 46, 46)',
+    margin: '10px 0',
+    width: '100%',
   };
 
   const buttonStyle = {
-    backgroundColor: 'rgb(0, 0, 0)',
-    color: 'white',
-    border: 'none',
-    padding: '8px 30px',
-    borderRadius: '10px',
-    fontSize: '18px',
-    cursor: 'pointer',
-    margin: '5px 25px',
+    marginTop: '20px',
   };
 
   const handleSignUpClick = () => {
-    history.push('/registration');
+    Navigate('/registration');
   };
 
   const handleLoginClick = () => {
-    history.push('/home');
+    Navigate('/home');
   };
 
   return (
-    <div style={{ paddingTop: '25vh' }}>
-      <div style={containerStyle} className="container">
-        <h2>Login</h2>
-        <form action="">
-          <input type="text" name="username" id="username" placeholder="Enter your username" style={inputStyle} />
-          <input type="password" name="pass" id="pass" placeholder="Enter your password" style={inputStyle} />
-          <div className="buttons btns">
-            <button type="button" onClick={handleLoginClick} style={buttonStyle}>Login</button>
-            <button type="button" onClick={handleSignUpClick} style={buttonStyle}>Sign Up</button>
+    <div style={{ paddingTop: '100px', backgroundColor: '#f3f4f6', minHeight: '100vh' }}>
+      <div style={containerStyle}>
+        <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>Login</h2>
+        <form>
+          <TextField
+            id="username"
+            label="Username"
+            variant="outlined"
+            style={inputStyle}
+            InputProps={{
+              startAdornment: (
+                <AccountCircleIcon />
+              ),
+            }}
+          />
+          <TextField
+            id="password"
+            label="Password"
+            type="password"
+            variant="outlined"
+            style={inputStyle}
+            InputProps={{
+              startAdornment: (
+                <LockIcon />
+              ),
+            }}
+          />
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button variant="contained" onClick={handleLoginClick} style={buttonStyle} color="primary">
+              Login
+            </Button>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <Button onClick={handleSignUpClick} color="primary">Sign Up</Button>
           </div>
         </form>
       </div>
